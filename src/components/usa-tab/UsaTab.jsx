@@ -1,5 +1,11 @@
-import { UsaWeatherChart } from "../usa-weather-chart/UsaWeatherChart";
+import { UsaHumidityChart } from "../usa-humidity-chart/UsaHumidityChart";
+import { UsaTemperatureChart } from "../usa-temperature-chart/UsaTemperatureChart";
 
 export const UsaTab = () => {
-  return <UsaWeatherChart />;
+  return (
+    <div className="weather-tab">
+      <UsaTemperatureChart />
+      <UsaHumidityChart />
+    </div>
+  );
 };

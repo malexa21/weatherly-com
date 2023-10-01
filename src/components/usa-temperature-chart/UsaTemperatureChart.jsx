@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { BangkokData } from "../../data/asia/bangkok";
-import { BeijingData } from "../../data/asia/bei-jing";
-import { TokyoData } from "../../data/asia/tokyo";
 
+import { LosAngelesData } from "../../data/usa/los-angeles";
+import { NewOrleansData } from "../../data/usa/new-orleans";
+import { NewYorkData } from "../../data/usa/new-york";
 import { WeatherChart } from "../weather-chart/WeatherChart";
 
 const LOCATION_DATA = [
-  { name: "Bangkok", weatherData: BangkokData },
-  { name: "Beijing", weatherData: BeijingData },
-  { name: "Tokyo", weatherData: TokyoData },
+  { name: "Los Angeles", weatherData: LosAngelesData },
+  { name: "New Orleans", weatherData: NewOrleansData },
+  { name: "New York", weatherData: NewYorkData },
 ];
 
-export const AsiaWeatherChart = () => {
+export const UsaTemperatureChart = () => {
   const [location, setLocation] = useState(LOCATION_DATA[0]);
 
   const handleChangeLocationClick = () => {
@@ -26,7 +26,12 @@ export const AsiaWeatherChart = () => {
     <div>
       <h1>{location.name}</h1>
       <div className="chart">
-        <WeatherChart data={location.weatherData} />
+        <WeatherChart
+          type={"temp"}
+          name="Temperature"
+          color="#8884d8"
+          data={location.weatherData}
+        />
       </div>
       <button onClick={handleChangeLocationClick}>Change Location</button>
     </div>

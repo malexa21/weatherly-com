@@ -1,5 +1,11 @@
-import { AsiaWeatherChart } from "../asia-weather-chart/AsiaWeatherChart";
+import { AsiaHumidityChart } from "../asia-humidity-chart/AsiaHumidityChart";
+import { AsiaTemperatureChart } from "../asia-temperature-chart/AsiaTemperatureChart";
 
 export const AsiaTab = () => {
-  return <AsiaWeatherChart />;
+  return (
+    <div className="weather-tab">
+      <AsiaTemperatureChart />
+      <AsiaHumidityChart />
+    </div>
+  );
 };
